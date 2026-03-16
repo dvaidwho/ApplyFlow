@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="popup.css" />
+  <title>ApplyFlow</title>
+</head>
+<body>
+  <div class="container">
+    <h1>ApplyFlow</h1>
+
+    <div id="no-job-banner" class="no-job-banner hidden">
+      No job detected on this page — you can still fill in fields manually.
+    </div>
+
+    <div class="field">
+      <label>Company <span class="required">*</span></label>
+      <input type="text" id="company" placeholder="e.g. Google" required />
+    </div>
+    
+    <div class="field">
+      <label>Position <span class="required">*</span></label>
+      <input type="text" id="position" placeholder="e.g. Software Engineer" required />
+    </div>
+
+    <div class="field">
+      <label>Location <span class="required">*</span></label>
+      <input type="text" id="location" placeholder="e.g. Boston, MA" />
+    </div>
+
+    <div class="field">
+      <label>Compensation</label>
+      <input type="text" id="compensation" placeholder="e.g. $36/hr" />
+    </div>
+
+    <div class="field">
+      <label>Source</label>
+      <select id="source">
+        <option value="">-- Select --</option>
+        <option value="LinkedIn">LinkedIn</option>
+        <option value="Handshake">Handshake</option>
+        <option value="Company Website">Company Website</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Link</label>
+      <input type="text" id="link" placeholder="Application URL" />
+    </div>
+
+    <div class="field">
+      <label>Status</label>
+      <select id="status">
+        <option value="Sent" selected>Sent</option>
+        <option value="Application Received">Application Received</option>
+        <option value="In Review">In Review</option>
+        <option value="Online Assessment">Online Assessment</option>
+        <option value="Phone Call">Phone Call</option>
+        <option value="Interview">Interview</option>
+        <option value="Offer">Offer</option>
+        <option value="Rejected">Rejected</option>
+      </select>
+    </div>
+
+    <div id="duplicate-warning" class="warning hidden">
+      ⚠️ This URL may already be tracked.
+    </div>
+
+    <div id="status-msg" class="status-msg hidden"></div>
+
+    <button id="saveBtn">Save to Sheet</button>
+  </div>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
